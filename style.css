@@ -1,0 +1,207 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* ||FONTS */
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900&display=swap');
+
+/* ||SETUP */
+
+html {
+    font-size: 1rem;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* colors */
+    --bg-primary: hsl(0, 0%, 25%);
+    --bg-secondary: hsl(0, 0%, 96%);
+    --bg-accent-1: hsl(9, 100%, 64%);
+    --bg-accent-2: hsl(6, 92%, 36%);
+    --txt-light: hsl(0, 0%, 52%);
+    --txt-basil: hsl(86, 81%, 31%);
+    --txt-shadow: hsl(0, 0%, 25%, .5);
+    /* fonts */
+    --ff-regular: 'Source Sans Pro', sans-serif;
+    --body-font: 400 1rem/1.35 var(--ff-regular);
+    --btn-font: 900 0.875rem/1.35 var(--ff-regular);
+    --heading-font: 900 2.5rem/1.15 var(--ff-regular);
+}
+
+/* ||GENERALS */
+
+body {
+    color: var(--bg-primary);
+    font: var(--body-font);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* ||TYPOGRAPHY */
+
+h1,
+h2 {
+    font: var(--heading-font);
+}
+
+p {
+    font-size: 1.125rem;
+    margin: 1em 0;
+}
+
+.intro__title {
+    color: var(--bg-secondary);
+    font-weight: 400;
+    text-shadow: 0 2px var(--txt-shadow);
+}
+
+.intro__title--bold {
+    font-weight: 900;
+}
+
+.intro__subtitle,
+.main-content__subheading {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.intro__subtitle {
+    color: var(--txt-basil);
+}
+
+.intro__top-text {
+    border-top: 5px solid var(--bg-accent-1);
+    border-image: linear-gradient(90deg, var(--bg-accent-1), var(--bg-accent-2)) 1;
+    color: var(--bg-accent-1);
+    font-size: 0.875rem;
+    margin: 0 auto;
+    order: -1;
+    padding-top: 0.25em;
+}
+
+.main-content__heading {
+    font-size: 2.25rem;
+    margin: 0.167em 0;
+}
+
+.main-content__subheading {
+    color: var(--bg-accent-1);
+    margin-bottom: 0.5em;
+}
+
+.main-content__fine-print {
+    color: var(--txt-light);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* ||BUTTONS */
+
+.btn {
+    border: 0;
+    cursor: pointer;
+    font: var(--btn-font);
+    letter-spacing: 1px;
+    padding: 1em 0;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: var(--bg-accent-1);
+    background-image: linear-gradient(90deg, var(--bg-accent-1), var(--bg-accent-2));
+    color: var(--bg-secondary);
+    margin-top: 1em;
+    transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    transform: scale(1.1);
+}
+
+/* ||LAYOUT */
+
+.intro,
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em 0;
+    text-align: center;
+}
+
+.intro {
+    min-height: 250px;
+    background: var(--bg-primary) url(./images/damiano-baschiera-hFXZ5cNfkOk-unsplash.jpg) no-repeat center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    justify-content: space-between;
+    padding-bottom: 1.5em;
+}
+
+.main-content {
+    align-items: center;
+    padding-top: 2.5em;
+}
+
+.main-content p,
+.email-collector {
+    max-width: 450px;
+}
+
+/* form */
+
+input,
+.btn {
+    width: 100%;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+input {
+    border: 1px solid var(--bg-primary);
+    box-sizing: border-box;
+    margin-bottom: 0.75em;
+    padding: 0.5em;
+    text-align: inherit;
+    transition: transform 250ms;
+}
+
+input:focus {
+    transform: scale(1.1);
+}
+
+/* ||MEDIA QUERIES */
+
+@media screen and (min-width: 576px) {
+    body {
+        display: flex;
+    }
+    .intro {
+        min-height: 100vh;
+    }
+    .intro__title {
+        font-size: 5vw;
+    }
+    .intro__subtitle {
+        font-size: 1.25rem;
+    }
+    .intro,
+    .main-content {
+        width: 50%;
+    }
+    .main-content {
+        justify-content: center;
+        padding-top: 0;
+        text-align: left;
+    }
+    .main-content__heading {
+        font-size: 2.625rem;
+    }
+}
